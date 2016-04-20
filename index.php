@@ -154,7 +154,7 @@
 	<div class="footer">
 	Copyright © W3Schools.com
 	</div>
-	<?php  include "page.class"; ?>
+	<?php  include "donor.class"; ?>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script type="text/javascript" src="slider.js"></script> 
 	<script type="text/javascript">

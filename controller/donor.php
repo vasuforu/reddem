@@ -3,7 +3,7 @@ class donor
 {
       public function test()
       {
-        echo "dkksjdkj";//some data
+        echo "dkksjdkj";
       }
 
       public function abc()
