@@ -311,3 +311,9 @@ float: right;
         border-spacing:10px;/*cellspacing:poor IE support for  this*/
        /* border-collapse:separate;*/
     }
+a:hover {
+    background-color: skyblue;
+}
+button:hover {
+    background-color: skyblue;
+}

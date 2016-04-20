@@ -72,7 +72,33 @@
 				<option value="A+">A+</option>
 		</select>
 		<input type="text" id="adress" name="adress" placeholder="City and dist"/>
-		<input type="button" onclick="savecustomerdetails();" value="Sing UP"/>
+		<input style="background-color:#3a6fb9;" type="button" onclick="savecustomerdetails();" value="Sing UP"/>
+		</form>
+		</div>
+		</div>
+	</div>
+	<div class="dispaly:none;" id="profiledata">
+	<?php //session_start(); ?>
+		<div class="login-page">
+		<div class="form">
+		<form class="login-form">
+		<input type="text" id="cusname" name="cusname"/>
+		<input type="password" id="password" name="password"/>
+		<input type="email" id="email" name="email"/>
+		<input type="text" id="mobileno" name="mobileno"/>
+		<select id="bloodgroup">
+				<option value="">Select Blood Groups</option>
+				<option value="0+">0+</option>
+				<option value="0-">0-</option>
+				<option value="AB+">AB+</option>
+				<option value="AB-">AB-</option>
+				<option value="B-">B-</option>
+				<option value="B+">B+</option>
+				<option value="A-">A-</option>
+				<option value="A+">A+</option>
+		</select>
+		<input type="text" id="adress" name="adress"/>
+		<input style="background-color:#3a6fb9;" type="button" onclick="savecustomerdetails();" value="Sing UP"/>
 		</form>
 		</div>
 		</div>
@@ -154,9 +180,32 @@
 	 }
 	 function savecustomerdetails(){
 		
-        alert('hiii');return false;
+        alert('hiii');
+		 $.ajax({
+            url: "controller/donor.php",
+            type: "POST",
+            data: {
+				form_key: window.FORM_KEY,
+                name: jQuery("#cusname").val(),
+                password: jQuery("#password").val(),
+                email: jQuery("#email").val(),
+                mobile: jQuery("#mobileno").val(),
+                bgroup: jQuery("#bloodgroup").val(),
+                address: jQuery("#adress").val(),
+				}, //this sends the user-id to php as a post variable, in php it can be accessed as $_POST['uid']
+            success: function(data){
+               //alert(data.bgroup);
+			   jQuery('#profiledata').show();
+			   	jQuery('#bannershow').hide();
+				jQuery('#bloodgrouplist').hide();
+				jQuery('#singnin').hide();
+				jQuery('#singup').hide();
+                
+            }
+        });
 		
 	 }
+	  jQuery('#profiledata').hide();
 	  jQuery('#singnin').hide();
 	  jQuery('#singup').hide();
 	  jQuery('#bloodgrouplist').hide();
