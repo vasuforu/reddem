@@ -4,18 +4,18 @@
  </head>
  <body>
 	<div class="menu">
-	<img src="images/blood copy.png" width="250" height="80">
+	<img src="images/blood copy.png" style="padding-left:51px;" height="88">
 	<a class="headebutton" onclick="singnin();">Sign In</a>
 	<a class="headebutton" onclick="singnup();">Sign Up</a>
 	</div>
 	
 	<div class="heademenu">
 	<ul>
-	<li><a onclick="#;">Home</a></li>
-	<li><a onclick="#">Blood Camp</a></li>
-	<li><a  onclick="#">Blood Group Customer List</a></li>
-	<li><a onclick="#">About Us</a></li>
-	<li><a onclick="#">Contact Us</a></li>
+	<li><a onclick="">Home</a></li>
+	<li><a onclick="">Blood Camp</a></li>
+	<li><a  onclick="allbloodgroup();">Blood Group Customer List</a></li>
+	<li><a onclick="">About Us</a></li>
+	<li><a onclick="">Contact Us</a></li>
 	<li>
 	<select id="searchbloodgroup" class="searchbutton" onchange="searchbloodgroup(this);">
 	<option value="">Search Blood Groups</option>
@@ -98,7 +98,7 @@
 				<option value="A+">A+</option>
 		</select>
 		<input type="text" id="adress" name="adress"/>
-		<input style="background-color:#3a6fb9;" type="button" onclick="savecustomerdetails();" value="Sing UP"/>
+		<input style="background-color:#3a6fb9;" type="button" onclick="" value="Update"/>
 		</form>
 		</div>
 		</div>
@@ -183,7 +183,7 @@
 		
         alert('hiii');
 		 $.ajax({
-            url: "controller/donor/savedata",
+            url : 'controller/donor/savecustomerdata',
             type: "POST",
             data: {
 				form_key: window.FORM_KEY,
@@ -194,7 +194,7 @@
                 bgroup: jQuery("#bloodgroup").val(),
                 address: jQuery("#adress").val(),
 				}, //this sends the user-id to php as a post variable, in php it can be accessed as $_POST['uid']
-            success: function(data){
+				success: function(data){
                //alert(data.bgroup);
 			   jQuery('#profiledata').show();
 			   	jQuery('#bannershow').hide();
@@ -216,13 +216,31 @@
 		jQuery('#singup').hide();
 		jQuery('#bannershow').hide();
 		jQuery('#bloodgrouplist').show(); $.ajax({
-           url : 'controller/donor/getName',
+			url : 'controller/donor/getname',
             type: "POST",
             data: {
 				form_key: window.FORM_KEY,
                 bgroup:jQuery('#searchbloodgroup').val(),
-				}, //this sends the user-id to php as a post variable, in php it can be accessed as $_POST['uid']
-            success: function(data){
+				},
+				success: function(data){
+               //alert(data.bgroup);
+			   
+            }
+        });
+		
+	}
+	function allbloodgroup(){
+		jQuery('#singnin').hide();
+		jQuery('#singup').hide();
+		jQuery('#bannershow').hide();
+		jQuery('#bloodgrouplist').show(); $.ajax({
+			url :'controller/alllist.php',
+            type: "POST",
+            data: {
+				form_key: window.FORM_KEY,
+                bgroup:jQuery('#searchbloodgroup').val(),
+				},
+				success: function(data){
                //alert(data.bgroup);
 			   
             }

@@ -1,11 +1,14 @@
 <?php
 class donor {
- 
-
-  function getName()
-  {
-    return "lion";
-  }
+	function getnameAction()
+	{
+		echo "vaasu";exit;
+	}
+	
+	function savecustomerdataAction()
+	{
+		echo "sreenu";exit;
+	}
   
  }
 ?>
