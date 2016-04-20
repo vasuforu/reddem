@@ -56,12 +56,12 @@
 		<div class="login-page">
 		<div class="form">
 		<form class="login-form">
-		<input type="text" placeholder="username"/>
-		<input type="password" placeholder="password"/>
-		<input type="email" placeholder="Email"/>
-		<input type="text" placeholder="Mobile Number"/>
+		<input type="text" id="cusname" name="cusname" placeholder="username"/>
+		<input type="password" id="password" name="password" placeholder="password"/>
+		<input type="email" id="email" name="email" placeholder="Email"/>
+		<input type="text" id="mobileno" name="mobileno" placeholder="Mobile Number"/>
 		<select id="bloodgroup">
-				<option value="">Search Blood Groups</option>
+				<option value="">Select Blood Groups</option>
 				<option value="0+">0+</option>
 				<option value="0-">0-</option>
 				<option value="AB+">AB+</option>
@@ -72,7 +72,7 @@
 				<option value="A+">A+</option>
 		</select>
 		<input type="text" id="adress" name="adress" placeholder="City and dist"/>
-		<button>Sign Up</button>
+		<input type="button" onclick="savecustomerdetails();" value="Sing UP"/>
 		</form>
 		</div>
 		</div>
@@ -151,7 +151,12 @@
 		  jQuery('#singnin').hide();
 		  jQuery('#singup').show();
 		  jQuery('#bloodgrouplist').hide();
-	  }
+	 }
+	 function savecustomerdetails(){
+		
+        alert('hiii');return false;
+		
+	 }
 	  jQuery('#singnin').hide();
 	  jQuery('#singup').hide();
 	  jQuery('#bloodgrouplist').hide();
