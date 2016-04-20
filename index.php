@@ -60,6 +60,18 @@
 		<input type="password" placeholder="password"/>
 		<input type="email" placeholder="Email"/>
 		<input type="text" placeholder="Mobile Number"/>
+		<select id="bloodgroup">
+				<option value="">Search Blood Groups</option>
+				<option value="0+">0+</option>
+				<option value="0-">0-</option>
+				<option value="AB+">AB+</option>
+				<option value="AB-">AB-</option>
+				<option value="B-">B-</option>
+				<option value="B+">B+</option>
+				<option value="A-">A-</option>
+				<option value="A+">A+</option>
+		</select>
+		<input type="text" id="adress" name="adress" placeholder="City and dist"/>
 		<button>Sign Up</button>
 		</form>
 		</div>
@@ -132,16 +144,20 @@
 		  jQuery('#bannershow').hide();
 		  jQuery('#singnin').show();
 		  jQuery('#singup').hide();
+		  jQuery('#bloodgrouplist').hide();
 	  }
 	  function singnup(){
 		  jQuery('#bannershow').hide();
 		  jQuery('#singnin').hide();
 		  jQuery('#singup').show();
+		  jQuery('#bloodgrouplist').hide();
 	  }
 	  jQuery('#singnin').hide();
 	  jQuery('#singup').hide();
 	  jQuery('#bloodgrouplist').hide();
 	function searchbloodgroup(){
+		jQuery('#singnin').hide();
+		jQuery('#singup').hide();
 		jQuery('#bannershow').hide();
 		jQuery('#bloodgrouplist').show();
 	}
