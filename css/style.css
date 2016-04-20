@@ -101,7 +101,6 @@ content: "";
 }
 .banner .slider .dots {
 position: absolute;
-bottom: 20px;
 left: 60%;
 z-index: 40;
  *zoom: 1;
@@ -138,20 +137,7 @@ float: left;
 .banner .slider .arrow .btn-right {
 float: right;
 }
-.headebutton{
-	float:right;
-	margin-right:50px;
-	background-color: #3a6fb9;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
+
 
 .login-page {
   width: 800px;
@@ -254,22 +240,50 @@ float: right;
 	margin:3px;
 }
 .heademenu{
-	margin:3px;
 	background-color:#3a6fb9;
-	color:#fff;
-	padding:10px;
+	
 }
-.searchbutton{
-
+.headebutton{
+	border-radius:15px;
 	float:right;
 	margin-right:50px;
-    border: 2px solid #3a6fb9;
-    padding: 15px 32px;
+	background-color: #3a6fb9;
+    border: none;
+    color: white;
+    padding: 13px 31px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
+    cursor: pointer;
+}
+.heademenu ul li{
+	margin-left:50px;
+	border-radius: 15px;
+	display:inline;
+	background-color: #3a6fb9;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+}
+.heademenu ul li a:hover{
+background-color: skyblue;	
+}
+
+.menubutton a{
+	margin-left:20px;
+}
+.searchbutton{
+	border-radius: 5px;
+	margin-right:10px;
+    border: 2px solid #3a6fb9;
+    padding:6px 27px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0.2% 10%;
     cursor: pointer;
 }
 .footer {
@@ -279,41 +293,50 @@ float: right;
     text-align:center;
 	padding:10px;
 }.
-.button {
-    background-color:#3a6fb9;
-    text-align:center;
-	margin:5px;
+.menubutton {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	border-radius: 8px;
 }
 .divRow
-    {
-       display:table-row;
-       width:auto;
-	   text-align:center;
-    }
+{
+   display:table-row;
+   width:auto;
+   text-align:center;
+}
 
-    .divCell
-    {
-        float:left;/*fix for  buggy browsers*/
-        display:table-column;
-        width:264px;
-        background-color:#ccc;
-		text-align:center;
-		padding:10px 0px 0px 0px;
-		height:32px;
-		font-size:16px;
-    }
-	 .divTable
-    {
-        display: table;
-        width:100%;
-        background-color:#eee;
-        border:1px solid  #666666;
-        border-spacing:10px;/*cellspacing:poor IE support for  this*/
-       /* border-collapse:separate;*/
-    }
+.divCell
+{
+	float:left;/*fix for  buggy browsers*/
+	display:table-column;
+	width:20%;
+	background-color:#ccc;
+	text-align:center;
+	padding:10px 0px 0px 0px;
+	height:32px;
+	font-size:16px;
+}
+ .divTable
+{
+	display: table;
+	width:100%;
+	background-color:#eee;
+	border:1px solid  #666666;
+	border-spacing:10px;/*cellspacing:poor IE support for  this*/
+   /* border-collapse:separate;*/
+}
 a:hover {
-    background-color: skyblue;
+background-color: skyblue;
 }
 button:hover {
-    background-color: skyblue;
+background-color: skyblue;
 }
+

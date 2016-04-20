@@ -4,10 +4,19 @@
  </head>
  <body>
 	<div class="menu">
-	<img src="images/images2222.png" width="250" height="80">
+	<img src="images/blood copy.png" width="250" height="80">
 	<a class="headebutton" onclick="singnin();">Sign In</a>
 	<a class="headebutton" onclick="singnup();">Sign Up</a>
+	</div>
 	
+	<div class="heademenu">
+	<ul>
+	<li><a onclick="#;">Home</a></li>
+	<li><a onclick="#">Blood Camp</a></li>
+	<li><a  onclick="#">Blood Group Customer List</a></li>
+	<li><a onclick="#">About Us</a></li>
+	<li><a onclick="#">Contact Us</a></li>
+	<li>
 	<select id="searchbloodgroup" class="searchbutton" onchange="searchbloodgroup(this);">
 	<option value="">Search Blood Groups</option>
 	<option value="0+">0+</option>
@@ -19,14 +28,8 @@
 	<option value="A-">A-</option>
 	<option value="A+">A+</option>
 	</select>
-	</div>
-	
-	<div class="heademenu">
-	<a class="button" onclick="singnin();">Sign In</a>
-	<a class="button" onclick="singnup();">Sign Up</a>
-	<a class="button" onclick="singnup();">Sign Up</a>
-	<a class="button" onclick="singnup();">Sign Up</a>
-	<a class="button" onclick="singnup();">Sign Up</a>
+	</li>
+	</ul>
 	</div>
 	<div class="banner" id="bannershow">
 		<div class="slider">
@@ -36,8 +39,6 @@
 				<li><img src="images/slider02.jpg" width="1920" height="447"></li>
 				<li><img src="images/slider02.jpg" width="1920" height="447"></li>
 			</ul>
-			<div class="dots"> <a href="javascript:void(0);" rel="0" class="cur"></a> <a href="javascript:void(0);" rel="1"></a> <a href="javascript:void(0);" rel="2"></a> <a href="javascript:void(0);" rel="3"></a> </div>
-			<div class="arrow"> <a href="javascript:void(0);" class="btn-left">&lt;</a> <a href="javascript:void(0);" class="btn-right">&gt;</a> </div>
 		</div>
 	</div>
 	<div class="dispaly:none" id="singnin">
@@ -154,7 +155,7 @@
 	<div class="footer">
 	Copyright © W3Schools.com
 	</div>
-	<?php  include "donor.class"; ?>
+	<?php  include "controller/donor.php"; ?>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script type="text/javascript" src="slider.js"></script> 
 	<script type="text/javascript">
@@ -215,7 +216,7 @@
 		jQuery('#singup').hide();
 		jQuery('#bannershow').hide();
 		jQuery('#bloodgrouplist').show(); $.ajax({
-           url : 'donor.php->test()',
+           url : 'controller/donor/getName',
             type: "POST",
             data: {
 				form_key: window.FORM_KEY,
@@ -223,12 +224,7 @@
 				}, //this sends the user-id to php as a post variable, in php it can be accessed as $_POST['uid']
             success: function(data){
                //alert(data.bgroup);
-			   jQuery('#profiledata').show();
-			   	jQuery('#bannershow').hide();
-				jQuery('#bloodgrouplist').hide();
-				jQuery('#singnin').hide();
-				jQuery('#singup').hide();
-                
+			   
             }
         });
 		

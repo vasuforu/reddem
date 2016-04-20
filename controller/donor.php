@@ -1,15 +1,12 @@
-<?php 
-class donor
-{
-      public function test()
-      {
-        echo "dkksjdkj";
-      }
+<?php
+class donor {
+ 
 
-      public function abc()
-      {
-        //some data
-      }
-}
-
+  function getName()
+  {
+    return "lion";
+  }
+  
+ }
 ?>
+
